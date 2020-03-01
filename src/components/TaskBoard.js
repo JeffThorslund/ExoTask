@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Note from "./Note";
+import { CardColumns } from "react-bootstrap";
+import './TaskBoard.css'
 
-
-import { CardColumns, Col } from "react-bootstrap";
 
 class TaskBoard extends Component {
   constructor(props) {
@@ -40,17 +40,14 @@ class TaskBoard extends Component {
 
   render() {
     //iterates over the idArr to create a <Note /> for each.
-
     let noteArr = [...this.state.idArr].map((element, index) => {
-      return (
-        
-          <Note index={element} /*deleteNote={this.deleteNote}*/ />
-        
-      );
+      return <Note index={element} /*deleteNote={this.deleteNote}*/ />;
     });
 
     return (
-      <div>
+      <div id="wrapper">
+        <h1 id="title">Taskit</h1>
+        <h2 id="subtitle"> Assigning tasks has never been easier. </h2>
         <CardColumns>{noteArr}</CardColumns>
         <button className="btn btn-primary" onClick={this.IncreaseNoteCount}>
           Add new
