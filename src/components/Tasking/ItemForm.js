@@ -4,30 +4,38 @@ import { Form, Button } from "react-bootstrap";
 class ItemForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {text:''};
-  } 
+    this.state = { text: "" };
+  }
 
   //Sends value to Item List
 
-  addToList = (e) => {
+  addToList = e => {
     e.preventDefault();
-    this.props.addToList(this.state.text);
+
+    if (this.state.text.length > 0) {
+      this.props.addToList(this.state.text);
+    }
     this.setState({
-        text:''
-    })
+      text: ""
+    });
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
-        text: e.target.value
-    })
-  }
+      text: e.target.value
+    });
+  };
 
   render() {
     return (
       <Form onSubmit={this.addToList}>
         <Form.Group>
-          <Form.Control type="task" placeholder="Gimme something!" value={this.state.text} onChange={this.handleChange}/>
+          <Form.Control
+            type="task"
+            placeholder="Gimme something!"
+            value={this.state.text}
+            onChange={this.handleChange}
+          />
         </Form.Group>
       </Form>
     );

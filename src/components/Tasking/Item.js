@@ -3,7 +3,15 @@
 import React from "react";
 
 const Item = props => {
-  return <div>{props.task}</div>;
+  const handleCompleted = e => {
+    props.handleCompleted(e.target.id);
+  };
+
+  return (
+    <div onClick={handleCompleted} id={props.id}>
+      {props.data} X
+    </div>
+  );
 };
 
 export default Item;

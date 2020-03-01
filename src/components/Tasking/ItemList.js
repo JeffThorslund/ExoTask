@@ -3,44 +3,78 @@
 import React from "react";
 import ItemForm from "./ItemForm";
 import Item from "./Item";
+import "./ItemList.css";
 
 class ItemList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { incomp: [], comp: [] };
+    this.state = {
+      incomp: ["test", "ok boomer", "crappy", "buddyyyy"],
+      comp: ["test"]
+    };
   }
 
   //Adds ItemForm.js to incomp in state
 
   addToList = text => {
     let currentList = [...this.state.incomp];
-    currentList.push(text);
+    currentList.unshift(text);
     this.setState({
       incomp: currentList
+    });
+  };
+
+  //Changes incomp items to comp
+
+  handleCompleted = index => {
+    let incomp = [...this.state.incomp];
+    let comp = [incomp.splice(index, 1), ...this.state.comp];
+    this.setState({
+      comp: comp,
+      incomp: incomp
+    });
+  };
+
+  //Changes comp items to incomp
+
+  handleCompletedReverse = index => {
+    let comp = [...this.state.comp];
+    let incomp = [...this.state.incomp, comp.splice(index, 1)];
+    this.setState({
+      comp: comp,
+      incomp: incomp
     });
   };
 
   render() {
     //Creates a incomp list
 
-    let incompList = this.state.incomp.map(element => {
-      return <div>{element}</div>;
+    let incompList = this.state.incomp.map((element, index) => {
+      return (
+        <Item
+          data={element}
+          handleCompleted={this.handleCompleted}
+          id={index}
+        />
+      );
     });
 
-    let compList = this.state.comp.map(element => {
-      return <div>{element}</div>;
+    //Creates a comp list
+
+    let compList = this.state.comp.map((element, index) => {
+      return (
+        <Item
+          data={element}
+          handleCompleted={this.handleCompletedReverse}
+          id={index}
+        />
+      );
     });
 
     return (
       <div>
-        <h2 id="title">incomp</h2>
-
-        {incompList}
-
-        <h2 id="title">comp</h2>
-
-        {compList}
-
+        <div id="incomplete">{incompList}</div>
+        <div id="complete">{compList}</div>
         <ItemForm addToList={this.addToList} />
       </div>
     );
