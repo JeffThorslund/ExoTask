@@ -1,6 +1,6 @@
 import React from "react";
 
-import ItemList from "./ItemList";
+import ItemList from "./ItemList/ItemList";
 import ItemForm from "./ItemForm"
 
 import { Col, Card } from "react-bootstrap";

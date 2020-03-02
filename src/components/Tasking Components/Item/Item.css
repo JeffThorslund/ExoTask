@@ -1,0 +1,9 @@
+#checkbox {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.item-wrapper {
+  cursor: pointer;
+}
+/*# sourceMappingURL=Item.css.map */

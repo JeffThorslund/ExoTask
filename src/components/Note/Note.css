@@ -1,0 +1,9 @@
+#card-wrapper {
+  margin: 10px 0px 15px 0px;
+  background-color: #e6e6e6;
+  border: 0px solid black;
+  width: 90%;
+  -webkit-box-shadow: 10px 10px 30px #39393a, -10px -10px 30px #e6e6e6;
+          box-shadow: 10px 10px 30px #39393a, -10px -10px 30px #e6e6e6;
+}
+/*# sourceMappingURL=Note.css.map */

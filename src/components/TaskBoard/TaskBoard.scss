@@ -1,0 +1,21 @@
+/* RGB */
+$color1: rgba(133, 255, 199, 1);
+$color2: rgba(41, 115, 115, 1);
+$color3: rgba(255, 133, 82, 1);
+$color4: rgba(230, 230, 230, 1);
+$color5: rgba(57, 57, 58, 1);
+
+
+#wrapper{
+    background-image: linear-gradient($color5, $color4);
+    height: 100%;
+    min-height: 100vh;
+    padding: 3vh 5vw 0vh 5vw;
+    font-family: 'Montserrat', ;
+
+}
+
+#wrapper #title, #wrapper #subtitle{
+    color: $color4;
+    text-align: center;
+}

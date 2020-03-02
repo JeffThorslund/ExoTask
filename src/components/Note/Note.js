@@ -1,9 +1,7 @@
 import React from "react";
-
-import ItemList from "./Tasking/ItemList";
-import Tasking from "./Tasking/Tasking"
-
-import { Col, Card } from "react-bootstrap";
+import Tasking from "../Tasking Components/Tasking";
+import { Card } from "react-bootstrap";
+import "./Note.scss";
 
 //import ItemForm from "./ItemForm";
 //import Item from "./Item";
@@ -21,32 +19,15 @@ class Note extends React.Component {
     };
   }
 
-render(){
-
+  render() {
     return (
-      
-        <div>
-            
-
-            <Card
-          
-          
-          /*style={
-            this.state.visible ? { display: "block" } : { display: "none" }*/
-          
-        ><Card.Body>
-<h1>
-                Title
-            </h1>
-          <Tasking />
-
-        </Card.Body>
-          
+        <Card id='card-wrapper'>
+          <Card.Body>
+            <Card.Title>Title</Card.Title>
+            <Card.Text>Get this stuff done!</Card.Text>
+            <Tasking />
+          </Card.Body>
         </Card>
-
-            
-        </div>
-      
     );
   }
 }

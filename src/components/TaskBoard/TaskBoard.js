@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Note from "./Note";
+import Note from "../Note/Note";
 import { CardColumns } from "react-bootstrap";
 import './TaskBoard.css'
+
 
 
 class TaskBoard extends Component {
@@ -46,7 +47,7 @@ class TaskBoard extends Component {
 
     return (
       <div id="wrapper">
-        <h1 id="title">Taskit</h1>
+        <h1 id="title">Task-it Basket</h1>
         <h2 id="subtitle"> Assigning tasks has never been easier. </h2>
         <CardColumns>{noteArr}</CardColumns>
         <button className="btn btn-primary" onClick={this.IncreaseNoteCount}>

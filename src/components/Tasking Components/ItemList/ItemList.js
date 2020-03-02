@@ -1,9 +1,9 @@
 //Iterates a bunch of list items into a list with styling that depends on if the type is completed or incompleted.
 
 import React from "react";
-import ItemForm from "./ItemForm";
-import Item from "./Item";
-import "./ItemList.css";
+import ItemForm from "../ItemForm";
+import Item from "../Item/Item";
+import "./ItemList.scss";
 
 class ItemList extends React.Component {
   constructor(props) {
@@ -55,6 +55,7 @@ class ItemList extends React.Component {
           data={element}
           handleCompleted={this.handleCompleted}
           id={index}
+          checked={false}
         />
       );
     });
@@ -67,15 +68,18 @@ class ItemList extends React.Component {
           data={element}
           handleCompleted={this.handleCompletedReverse}
           id={index}
+          checked={true}
         />
       );
     });
 
     return (
       <div>
-        <div id="incomplete">{incompList}</div>
-        <div id="complete">{compList}</div>
         <ItemForm addToList={this.addToList} />
+        <div id="incomplete">{incompList}</div>
+        <div id='line'></div>
+        <div id="complete">{compList}</div>
+        
       </div>
     );
   }
