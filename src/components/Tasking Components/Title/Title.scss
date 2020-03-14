@@ -1,0 +1,27 @@
+$color1: rgba(133, 255, 199, 1);
+$color2: rgba(41, 115, 115, 1);
+$color3: rgba(255, 133, 82, 1);
+$color4: rgba(230, 230, 230, 1);
+$color5: rgba(57, 57, 58, 1);
+
+.title #title-form{
+    background-color: $color4;
+    border-radius: 20px;
+    border: 0px solid black;
+    padding: 0px;
+    font-size: 2rem;
+    
+}
+
+.title #title-form:focus {
+    box-shadow: none
+  }
+
+.title .form-group#form-group{
+    margin-bottom: 0rem
+}
+
+.title .card-title{
+    margin-bottom: 4rem;
+}
+

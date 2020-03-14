@@ -1,35 +1,41 @@
 import React from "react";
 import Tasking from "../Tasking Components/Tasking";
+import Title from "../Tasking Components/Title/Title";
 import { Card } from "react-bootstrap";
 import "./Note.scss";
+import { MdClose } from "react-icons/md";
+import PropTypes from "prop-types";
 
-//import ItemForm from "./ItemForm";
-//import Item from "./Item";
-//import NoteTitle from "./NoteTitle";
-//import OptionsMunu from "./OptionsMenu";
+const Note = props => {
+  const deleteNote = e => {
+    
+    props.deleteNote(e.currentTarget.id);
+  };
 
-class Note extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      incompItems: [1], //This should not be an array?
-      compItems: [3], //Or this?
-      optionsShowing: false,
-      visible: true
-    };
-  }
+  return (
+    
+      <Card style={{ width: "18rem" }} id="card-wrapper">
+        <Card.Body>
+          <div id="flex-container">
+            <Title />
+            <MdClose onClick={deleteNote} id={props.id} />
+          </div>
 
-  render() {
-    return (
-        <Card id='card-wrapper'>
-          <Card.Body>
-            <Card.Title>Title</Card.Title>
-            <Card.Text>Get this stuff done!</Card.Text>
-            <Tasking />
-          </Card.Body>
-        </Card>
-    );
-  }
-}
+          index:{props.index} <br />
+          id:{props.id}
+
+
+          <Tasking />
+        </Card.Body>
+      </Card>
+    
+  );
+};
+
+Note.propTypes = {
+  id: PropTypes.number,
+  deleteNote: PropTypes.func,
+  index: PropTypes.number
+};
 
 export default Note;

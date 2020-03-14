@@ -19,3 +19,14 @@ $color5: rgba(57, 57, 58, 1);
     color: $color4;
     text-align: center;
 }
+
+#wrapper #cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#wrapper #add-note {
+    text-align: center;
+    height: 20px;
+}

@@ -1,61 +1,55 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Note from "../Note/Note";
-import { CardColumns } from "react-bootstrap";
-import './TaskBoard.css'
+import "./TaskBoard.css";
+import { IoIosAddCircle } from "react-icons/io";
 
+const TaskBoard = () => {
+  const [noteId, setNoteId] = useState([0]); // This holds an array of card ids
+  const [unique, setUnique] = useState(3); //Holds Unique Id
 
+  //Function to add a Note.
 
-class TaskBoard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      idArr: [1] // This holds an array with each number being the id of the arr.length[x]
-    };
-  }
+  const IncreaseNoteCount = () => {
+    let noteIdList = [...noteId];
+    noteIdList.push(unique); //Counter to add the next number onto the end.
 
-  //Function to add a task.
-
-  IncreaseNoteCount = () => {
-    let idArr = [...this.state.idArr];
-    idArr.push(idArr[idArr.length - 1] + 1); //Counter to add the next number onto the end.
-    this.setState({
-      idArr: idArr
-    });
+    setUnique(unique + 1);
+    setNoteId(noteIdList);
   };
 
   //Deletes a certain note.
 
-  deleteNote = index => {
-    //Takes in the id (or maybe the position) of selected note.
-    let idArr = [...this.state.idArr];
-    console.log("index is " + index);
-    let newIdArr = idArr.filter(item => {
-      console.log("current item is " + item);
-      return Number(item) !== Number(index);
-    });
-    console.log("the new array is " + newIdArr);
-    this.setState({
-      idArr: newIdArr
-    });
+  const deleteNote = element => {
+    //Takes in the id of selected note.
+    let noteIdList = [...noteId];
+    console.log(noteIdList.indexOf(Number(element)), element)
+    noteIdList.splice(noteId.indexOf(Number(element)),1)
+    
+    setNoteId(noteIdList)
   };
 
-  render() {
-    //iterates over the idArr to create a <Note /> for each.
-    let noteArr = [...this.state.idArr].map((element, index) => {
-      return <Note index={element} /*deleteNote={this.deleteNote}*/ />;
-    });
-
-    return (
-      <div id="wrapper">
-        <h1 id="title">Task-it Basket</h1>
-        <h2 id="subtitle"> Assigning tasks has never been easier. </h2>
-        <CardColumns>{noteArr}</CardColumns>
-        <button className="btn btn-primary" onClick={this.IncreaseNoteCount}>
-          Add new
-        </button>
-      </div>
+  let noteArr = [];
+  for (let i = 0; i < noteId.length; i++) {
+    noteArr.push(
+      <Note
+        deleteNote={deleteNote}
+        index={noteId.indexOf(noteId[i])}
+        id={noteId[i]}
+        key={noteId[i]}
+      />
     );
   }
-}
+
+  return (
+    <div id="wrapper">
+      <h1 id="title">Task-it Basket</h1>
+      <h2 id="subtitle"> Assigning tasks has never been easier. </h2>
+      <div id="cards">{noteArr}</div>
+      <IoIosAddCircle size="20em" id="add-note" onClick={IncreaseNoteCount}>
+        Add new
+      </IoIosAddCircle>
+    </div>
+  );
+};
 
 export default TaskBoard;

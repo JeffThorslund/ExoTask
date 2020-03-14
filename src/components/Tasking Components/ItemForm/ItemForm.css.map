@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,WAAW,CAAA;EACP,gBAAgB,EAJX,OAAsB;EAK3B,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,eAAe;EACvB,aAAa,EAAE,cAAc;EAC7B,OAAO,EAAE,GAAG;CACf;;AAED,AAAA,WAAW,AAAA,MAAM,CAAC;EACd,MAAM,EAAE,eAAe;CACxB",
+    "sources": [
+        "ItemForm.scss"
+    ],
+    "names": [],
+    "file": "ItemForm.css"
+}

@@ -1,9 +1,6 @@
 import React from "react";
 
 import ItemList from "./ItemList/ItemList";
-import ItemForm from "./ItemForm"
-
-import { Col, Card } from "react-bootstrap";
 
 //import ItemForm from "./ItemForm";
 //import Item from "./Item";
@@ -59,31 +56,7 @@ class Tasking extends React.Component {
   };*/
 
   render() {
-    //build incomp list
-
-    let incompItems = [...this.state.incompItems].map((element, index) => (
-      <div>incomp list</div>
-
-      /*<Item
-        content={element}
-        checked={false}
-        handleToggleCheckedStatus={this.handleToggleCheckedStatus}
-        index={index}
-      />*/
-    ));
-
-    //build comp list
-
-    let compItems = [...this.state.compItems].map((element, index) => (
-      <div>comp</div>
-
-      /*<Item
-        content={element}
-        checked={true}
-        handleToggleCheckedStatus={this.handleToggleCheckedStatus}
-        index={index}
-      />*/
-    ));
+   
 
     return (
       

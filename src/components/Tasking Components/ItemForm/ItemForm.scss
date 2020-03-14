@@ -4,18 +4,15 @@ $color3: rgba(255, 133, 82, 1);
 $color4: rgba(230, 230, 230, 1);
 $color5: rgba(57, 57, 58, 1);
 
-#card-wrapper{
-    margin: 10px 0px 15px 0px ;
+#input-form{
     background-color: $color4;
+    border-radius: 0px;
     border: 0px solid black;
-    box-shadow: 10px 10px 30px $color5, -10px -10px 30px $color4;
-    display: inline-block;
-
+    border-bottom: 2px Solid grey;
+    padding: 0px;
 }
 
-
-
-#flex-container{
-    display: flex;
-}
+#input-form:focus {
+    border: 0px solid black;
+  }
 

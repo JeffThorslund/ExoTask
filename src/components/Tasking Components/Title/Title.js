@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import './Title.css'
 
 class ItemForm extends React.Component {
   constructor(props) {
@@ -9,16 +10,9 @@ class ItemForm extends React.Component {
 
   //Sends value to Item List
 
-  addToList = e => {
-    e.preventDefault();
-
-    if (this.state.text.length > 0) {
-      this.props.addToList(this.state.text);
-    }
-    this.setState({
-      text: ""
-    });
-  };
+  handleSubmit = e => {
+      e.preventDefault()
+  }
 
   handleChange = e => {
     this.setState({
@@ -28,13 +22,14 @@ class ItemForm extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.addToList}>
-        <Form.Group>
+      <Form autocomplete="off" onSubmit={this.handleSubmit} className="title">
+        <Form.Group id='form-group'>
           <Form.Control
-            type="task"
-            placeholder="Gimme something!"
+            type="title"
+            placeholder="Title"
             value={this.state.text}
             onChange={this.handleChange}
+            id='title-form'
           />
         </Form.Group>
       </Form>
