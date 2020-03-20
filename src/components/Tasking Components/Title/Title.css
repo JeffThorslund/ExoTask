@@ -1,6 +1,4 @@
 .title #title-form {
-  background-color: #e6e6e6;
-  border-radius: 20px;
   border: 0px solid black;
   padding: 0px;
   font-size: 2rem;
@@ -17,5 +15,17 @@
 
 .title .card-title {
   margin-bottom: 4rem;
+}
+
+.on {
+  display: inline-block;
+}
+
+.off {
+  display: none;
+}
+
+#finaltitle {
+  font-size: 30px;
 }
 /*# sourceMappingURL=Title.css.map */

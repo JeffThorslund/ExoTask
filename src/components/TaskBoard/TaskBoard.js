@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Note from "../Note/Note";
 import "./TaskBoard.css";
+
 import { IoIosAddCircle } from "react-icons/io";
 
 const TaskBoard = () => {
@@ -12,7 +13,6 @@ const TaskBoard = () => {
   const IncreaseNoteCount = () => {
     let noteIdList = [...noteId];
     noteIdList.push(unique); //Counter to add the next number onto the end.
-
     setUnique(unique + 1);
     setNoteId(noteIdList);
   };
@@ -22,10 +22,9 @@ const TaskBoard = () => {
   const deleteNote = element => {
     //Takes in the id of selected note.
     let noteIdList = [...noteId];
-    console.log(noteIdList.indexOf(Number(element)), element)
-    noteIdList.splice(noteId.indexOf(Number(element)),1)
-    
-    setNoteId(noteIdList)
+    console.log(noteIdList.indexOf(Number(element)), element);
+    noteIdList.splice(noteId.indexOf(Number(element)), 1);
+    setNoteId(noteIdList);
   };
 
   let noteArr = [];
@@ -42,12 +41,17 @@ const TaskBoard = () => {
 
   return (
     <div id="wrapper">
-      <h1 id="title">Task-it Basket</h1>
-      <h2 id="subtitle"> Assigning tasks has never been easier. </h2>
+      <h1 id="title">Tasket</h1>
       <div id="cards">{noteArr}</div>
-      <IoIosAddCircle size="20em" id="add-note" onClick={IncreaseNoteCount}>
+      
+      
+    <div id="button-container"> 
+      <div id="add-note" onClick={IncreaseNoteCount}>
         Add new
-      </IoIosAddCircle>
+        </div>
+    </div>
+        
+      
     </div>
   );
 };

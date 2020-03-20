@@ -1,14 +1,16 @@
-$color1: rgba(133, 255, 199, 1);
-$color2: rgba(41, 115, 115, 1);
-$color3: rgba(255, 133, 82, 1);
-$color4: rgba(230, 230, 230, 1);
-$color5: rgba(57, 57, 58, 1);
+$color1: rgba(255, 231, 76, 1);
+$color2: rgba(255, 89, 100, 1);
+$color3: rgba(255, 255, 255, 1);
+$color4: rgba(56, 97, 140, 1);
+$color5: rgba(53, 167, 255, 1);
+$color4-tint: rgb(42, 73, 107);
+$color5-tint: rgb(110, 192, 255);
 
 #card-wrapper{
-    margin: 10px 0px 15px 0px ;
-    background-color: $color4;
-    border: 0px solid black;
-    box-shadow: 10px 10px 30px $color5, -10px -10px 30px $color4;
+    margin: 8px 0px 12px 0px ;
+    background-color: $color3;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px $color5-tint, -5px -5px 20px $color4-tint;
     display: inline-block;
 
 }
@@ -17,5 +19,6 @@ $color5: rgba(57, 57, 58, 1);
 
 #flex-container{
     display: flex;
+    justify-content: space-between;
 }
 

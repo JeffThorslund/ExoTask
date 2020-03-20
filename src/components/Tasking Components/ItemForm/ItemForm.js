@@ -24,7 +24,7 @@ const ItemForm = props => {
       <Form.Group>
         <Form.Control
           type="task"
-          placeholder="What on the go?"
+          placeholder="Give me a task!"
           value={text}
           onChange={handleChange}
           id="input-form"

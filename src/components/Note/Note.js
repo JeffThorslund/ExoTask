@@ -18,12 +18,11 @@ const Note = props => {
         <Card.Body>
           <div id="flex-container">
             <Title />
-            <MdClose onClick={deleteNote} id={props.id} />
+            <div><MdClose onClick={deleteNote} id={props.id} /></div>
           </div>
 
-          index:{props.index} <br />
-          id:{props.id}
-
+          {/*index:{props.index} <br />
+          id:{props.id}*/}
 
           <Tasking />
         </Card.Body>

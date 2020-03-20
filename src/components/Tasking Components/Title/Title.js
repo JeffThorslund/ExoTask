@@ -5,13 +5,19 @@ import './Title.css'
 class ItemForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" };
+    this.state = { text: "" ,
+  title: false};
   }
 
   //Sends value to Item List
 
   handleSubmit = e => {
       e.preventDefault()
+      this.setState(prevState=>({
+        title: !prevState.title
+      }))
+      
+
   }
 
   handleChange = e => {
@@ -20,9 +26,13 @@ class ItemForm extends React.Component {
     });
   };
 
+
+
   render() {
     return (
-      <Form autocomplete="off" onSubmit={this.handleSubmit} className="title">
+      <div>
+        <div className={!this.state.title ? 'on' : 'off'}> 
+          <Form autocomplete="off" onSubmit={this.handleSubmit} className="title">
         <Form.Group id='form-group'>
           <Form.Control
             type="title"
@@ -33,6 +43,17 @@ class ItemForm extends React.Component {
           />
         </Form.Group>
       </Form>
+        </div>
+        
+
+      <div id='finaltitle' className={this.state.title ? 'on' : 'off'}
+
+      > 
+        {this.state.text}
+      </div>
+
+      </div>
+      
     );
   }
 }

@@ -5,8 +5,8 @@ $color4: rgba(230, 230, 230, 1);
 $color5: rgba(57, 57, 58, 1);
 
 .title #title-form{
-    background-color: $color4;
-    border-radius: 20px;
+    
+ 
     border: 0px solid black;
     padding: 0px;
     font-size: 2rem;
@@ -25,3 +25,15 @@ $color5: rgba(57, 57, 58, 1);
     margin-bottom: 4rem;
 }
 
+.on{
+    display: inline-block;
+
+}
+
+.off{
+    display: none;
+}
+
+#finaltitle{
+    font-size: 30px;
+}

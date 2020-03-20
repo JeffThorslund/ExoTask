@@ -1,16 +1,20 @@
 /* RGB */
 #wrapper {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#39393a), to(#e6e6e6));
-  background-image: linear-gradient(#39393a, #e6e6e6);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#80c8ff), to(#38618c));
+  background-image: linear-gradient(#80c8ff, #38618c);
   height: 100%;
   min-height: 100vh;
   padding: 3vh 5vw 0vh 5vw;
   font-family: "Montserrat";
 }
 
-#wrapper #title, #wrapper #subtitle {
-  color: #e6e6e6;
+#wrapper #title {
+  color: black;
   text-align: center;
+  margin-bottom: 40px;
+  margin-top: 25px;
+  font-weight: bolder;
+  font-size: 50px;
 }
 
 #wrapper #cards {
@@ -24,8 +28,32 @@
           justify-content: space-evenly;
 }
 
+#wrapper #button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #wrapper #add-note {
+  border: 2px solid black;
   text-align: center;
-  height: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  margin: 40px;
+  font-size: 20px;
+}
+
+#wrapper #add-note:hover {
+  border: 2px solid #ff5964;
+  background-color: #ff5964;
+  font-weight: bold;
 }
 /*# sourceMappingURL=TaskBoard.css.map */

@@ -6,15 +6,9 @@ import Item from "../Item/Item";
 import "./ItemList.scss";
 
 const ItemList = props => {
-  const [incomplete, setIncomplete] = useState([
-    { text: "This is the incomplete content", id: 0 }
-  ]);
+  const [incomplete, setIncomplete] = useState([]);
 
-  const [complete, setComplete] = useState([
-    { text: "This is the complete content", id: 1 },
-    { text: "yeeeep", id: 3 },
-    { text: "ok", id: 4 }
-  ]);
+  const [complete, setComplete] = useState([]);
 
   const [unique, setUnique] = useState(5);
 
@@ -30,10 +24,13 @@ const ItemList = props => {
   //Changes incomp items to comp
 
   const handleCompleted = id => {
+
+    console.log(id, 'from ItemList')
+
     let completeList = [...complete];
     let incompleteList = [...incomplete];
 
-    const match = element => element.id == id; 
+    const match = element => element.id === Number(id);
     completeList.unshift(incompleteList[incompleteList.findIndex(match)]);
     incompleteList.splice(incompleteList.findIndex(match), 1);
 
@@ -47,7 +44,7 @@ const ItemList = props => {
     let completeList = [...complete];
     let incompleteList = [...incomplete];
 
-    const match = element => element.id == id;
+    const match = element => element.id === Number(id);
 
     console.log(
       "incompleteList before change: ",
@@ -106,8 +103,15 @@ const ItemList = props => {
   return (
     <div>
       <ItemForm addToList={addToList} />
+      <div className={incompleteList.length == 0 ? "empty" : "full"}>
+        Incomplete Items appear here
+      </div>
       <div id="incomplete">{incompleteList}</div>
+
       <div id="line"></div>
+      <div className={completeList.length == 0 ? "empty" : "full"}>
+        Complete Items appear here
+      </div>
       <div id="complete">{completeList}</div>
     </div>
   );
