@@ -1,6 +1,6 @@
 import React from "react";
-import Tasking from "../Tasking Components/Tasking";
-import Title from "../Tasking Components/Title/Title";
+import Tasking from "./Tasking Components/Tasking";
+import Title from "./Tasking Components/Title";
 import { Card } from "react-bootstrap";
 import "./Note.scss";
 import { MdClose } from "react-icons/md";

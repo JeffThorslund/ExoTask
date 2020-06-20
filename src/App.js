@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskBoard from './components/TaskBoard/TaskBoard'
+import TaskBoard from './components/TaskBoard'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';

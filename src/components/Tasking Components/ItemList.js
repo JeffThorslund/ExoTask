@@ -1,8 +1,8 @@
 //Iterates a bunch of list items into a list with styling that depends on if the type is completed or incompleted.
 
 import React, { useState } from "react";
-import ItemForm from "../ItemForm/ItemForm";
-import Item from "../Item/Item";
+import ItemForm from "./ItemForm";
+import Item from "./Item";
 import "./ItemList.scss";
 
 const ItemList = props => {
