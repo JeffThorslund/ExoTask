@@ -7,14 +7,14 @@ const TaskBoard = () => {
   const [noteIds, setNoteIds] = useState([0]);
 
   //increases every time a card is added.
-  const [globalCounter, setGlobalCounter] = useState(0);
+  const [uniqueNoteId, setUniqueNoteId] = useState(0);
 
  //Add a note.
   const addNote = () => {
     let noteIdsCopy = [...noteIds];
-    noteIdsCopy.push(globalCounter);
+    noteIdsCopy.push(uniqueNoteId);
     setNoteIds(noteIdsCopy);
-    setGlobalCounter(globalCounter + 1);
+    setUniqueNoteId(uniqueNoteId + 1);
   };
 
   //Delete a note.

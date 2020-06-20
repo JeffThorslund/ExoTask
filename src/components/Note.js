@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Tasking from "./Tasking Components/Tasking";
+import ItemList from "./Tasking Components/ItemList";
 import Title from "./Tasking Components/Title";
 
 import { MdClose } from "react-icons/md";
@@ -26,7 +26,7 @@ const Note = (props) => {
             />
           </div>
         </div>
-        <Tasking />
+        <ItemList />
       </Card.Body>
     </Card>
   );

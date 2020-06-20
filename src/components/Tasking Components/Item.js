@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 const Item = props => {
   const handleCompleted = e => {
     props.handleCompleted(e.target.id);
-    console.log(e.target, 'from Item')
   };
 
   return (
@@ -26,7 +25,7 @@ const Item = props => {
         <FiCheckSquare id={props.id}/>
       </div>
 
-      {props.data} {/*{props.id}*/}
+      {props.data}
 
     </div>
   );
