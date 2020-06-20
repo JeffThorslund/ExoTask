@@ -1,59 +1,59 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import './Title.css'
+import "./Title.css";
 
 class ItemForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" ,
-  title: false};
+    this.state = { value: "", titled: false };
   }
 
-  //Sends value to Item List
-
-  handleSubmit = e => {
-      e.preventDefault()
-      this.setState(prevState=>({
-        title: !prevState.title
-      }))
-      
-
-  }
-
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      text: e.target.value
+      value: e.target.value,
     });
   };
 
+  setTitleFalse = (e) => {
+    e.preventDefault();
+    this.setState({
+      titled: false,
+    });
+  };
 
+  setTitleTrue = (e) => {
+    e.preventDefault();
+    this.setState({
+      titled: true,
+    });
+  };
 
   render() {
     return (
       <div>
-        <div className={!this.state.title ? 'on' : 'off'}> 
-          <Form autocomplete="off" onSubmit={this.handleSubmit} className="title">
-        <Form.Group id='form-group'>
-          <Form.Control
-            type="title"
-            placeholder="Title"
-            value={this.state.text}
-            onChange={this.handleChange}
-            id='title-form'
-          />
-        </Form.Group>
-      </Form>
-        </div>
-        
-
-      <div id='finaltitle' className={this.state.title ? 'on' : 'off'}
-
-      > 
-        {this.state.text}
+        {this.state.titled ? (
+          <div onClick={(e) => this.setTitleFalse(e)} className="untitled">
+            {this.state.value}
+          </div>
+        ) : (
+          <Form
+            autocomplete="off"
+            onSubmit={(e) => this.setTitleTrue(e)}
+            className="title"
+          >
+            <Form.Group id="form-group">
+              <Form.Control
+                type="title"
+                placeholder="Enter a Title"
+                value={this.state.value}
+                onChange={this.handleChange}
+                onBlur={(e) => this.setTitleTrue(e)}
+                className="titled"
+              />
+            </Form.Group>
+          </Form>
+        )}
       </div>
-
-      </div>
-      
     );
   }
 }
