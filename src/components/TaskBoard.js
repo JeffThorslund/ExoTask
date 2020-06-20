@@ -2,39 +2,36 @@ import React, { useState } from "react";
 import Note from "./Note";
 import "./TaskBoard.css";
 
-import { IoIosAddCircle } from "react-icons/io";
-
 const TaskBoard = () => {
-  const [noteId, setNoteId] = useState([0]); // This holds an array of card ids
-  const [unique, setUnique] = useState(3); //Holds Unique Id
+  //Holds an array of card ids.
+  const [noteIds, setNoteIds] = useState([0]);
 
-  //Function to add a Note.
+  //increases every time a card is added.
+  const [globalCounter, setGlobalCounter] = useState(0);
 
-  const IncreaseNoteCount = () => {
-    let noteIdList = [...noteId];
-    noteIdList.push(unique); //Counter to add the next number onto the end.
-    setUnique(unique + 1);
-    setNoteId(noteIdList);
+ //Add a note.
+  const addNote = () => {
+    let noteIdsCopy = [...noteIds];
+    noteIdsCopy.push(globalCounter);
+    setNoteIds(noteIdsCopy);
+    setGlobalCounter(globalCounter + 1);
   };
 
-  //Deletes a certain note.
-
+  //Delete a note.
   const deleteNote = element => {
-    //Takes in the id of selected note.
-    let noteIdList = [...noteId];
-    console.log(noteIdList.indexOf(Number(element)), element);
-    noteIdList.splice(noteId.indexOf(Number(element)), 1);
-    setNoteId(noteIdList);
+    let noteIdsCopy = [...noteIds];
+    noteIdsCopy.splice(noteIds.indexOf(Number(element)), 1);
+    setNoteIds(noteIdsCopy);
   };
 
   let noteArr = [];
-  for (let i = 0; i < noteId.length; i++) {
+  for (let i = 0; i < noteIds.length; i++) {
     noteArr.push(
       <Note
         deleteNote={deleteNote}
-        index={noteId.indexOf(noteId[i])}
-        id={noteId[i]}
-        key={noteId[i]}
+        index={noteIds.indexOf(noteIds[i])}
+        id={noteIds[i]}
+        key={noteIds[i]}
       />
     );
   }
@@ -46,7 +43,7 @@ const TaskBoard = () => {
       
       
     <div id="button-container"> 
-      <div id="add-note" onClick={IncreaseNoteCount}>
+      <div id="add-note" onClick={addNote}>
         Add new
         </div>
     </div>
