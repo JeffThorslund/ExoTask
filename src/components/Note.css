@@ -1,12 +1,3 @@
-#card-wrapper {
-  margin: 8px 0px 12px 0px;
-  background-color: white;
-  border-radius: 5px;
-  -webkit-box-shadow: 5px 5px 20px #6ec0ff, -5px -5px 20px #2a496b;
-          box-shadow: 5px 5px 20px #6ec0ff, -5px -5px 20px #2a496b;
-  display: inline-block;
-}
-
 #flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,5 +5,13 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (min-width: 320px) {
+  .note {
+    width: 200px;
+    height: auto;
+    background-color: #ffffff;
+  }
 }
 /*# sourceMappingURL=Note.css.map */

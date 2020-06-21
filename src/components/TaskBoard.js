@@ -1,55 +1,86 @@
 import React, { useState } from "react";
 import Note from "./Note";
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Masonry from "react-masonry-component";
+
 import "./TaskBoard.css";
 
+const shortid = require("shortid");
+
 const TaskBoard = () => {
-  //Holds an array of card ids.
-  const [noteIds, setNoteIds] = useState([0]);
+  const [notes, setNotes] = useState([
+    {
+      id: "aUniqueId",
+      title: "Example",
+      complete: ["a complete task", "another complete task"],
+      incomplete: ["an incomplete task", "another incomplete task"],
+    },
+  ]);
 
-  //increases every time a card is added.
-  const [uniqueNoteId, setUniqueNoteId] = useState(0);
-
- //Add a note.
+  //Add a note.
   const addNote = () => {
-    let noteIdsCopy = [...noteIds];
-    noteIdsCopy.push(uniqueNoteId);
-    setNoteIds(noteIdsCopy);
-    setUniqueNoteId(uniqueNoteId + 1);
+    let notesCopy = [...notes];
+    notesCopy.push({
+      id: shortid.generate(),
+      title: "Example",
+      complete: ["a complete task", "another complete task"],
+      incomplete: ["an incomplete task", "another incomplete task"],
+    });
+    setNotes(notesCopy);
   };
 
-  //Delete a note.
-  const deleteNote = element => {
-    let noteIdsCopy = [...noteIds];
-    noteIdsCopy.splice(noteIds.indexOf(Number(element)), 1);
-    setNoteIds(noteIdsCopy);
+  //Sets list items
+  const handleAppendListItems = (index, complete, incomplete) => {
+    let notesCopy = [...notes];
+    notesCopy[index].complete = complete;
+    notesCopy[index].incomplete = incomplete;
+    setNotes(notesCopy);
   };
 
-  let noteArr = [];
-  for (let i = 0; i < noteIds.length; i++) {
-    noteArr.push(
+  //Delete a note FIX THIS
+  const deleteNote = (index) => {
+    let notesCopy = [...notes];
+    notesCopy.splice(index, 1);
+    setNotes(notesCopy);
+  };
+
+  let noteArr = notes.map((note, index) => {
+    return (
       <Note
         deleteNote={deleteNote}
-        index={noteIds.indexOf(noteIds[i])}
-        id={noteIds[i]}
-        key={noteIds[i]}
+        handleAppendListItems={handleAppendListItems}
+        title={note.title}
+        complete={note.complete}
+        incomplete={note.incomplete}
+        noteIndex={index}
+        key={note.id}
       />
     );
-  }
+  });
 
   return (
-    <div id="wrapper">
-      <h1 id="title">Tasket</h1>
-      <div id="cards">{noteArr}</div>
-      
-      
-    <div id="button-container"> 
-      <div id="add-note" onClick={addNote}>
-        Add new
-        </div>
-    </div>
-        
-      
-    </div>
+    <Container fluid className="taskboard-container">
+      <Row className="justify-content-center">
+        <Col xs="auto" className="title m-3">
+          Tasket
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col sm={9}>
+          <Masonry options={{ transitionDuration: 0 }}>{noteArr}</Masonry>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs="auto">
+          <div id="add-note" onClick={addNote}>
+            Add new
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,60 +1,14 @@
-/* RGB */
-$color1: rgba(255, 231, 76, 1);
-$color2: rgba(255, 89, 100, 1);
-$color3: rgba(255, 255, 255, 1);
-$color4: rgba(56, 97, 140, 1);
-$color5: rgb(128, 200, 255);
+@import "./standards";
 
-
-#wrapper{
-    background-image: linear-gradient($color5, $color4);
-    height: 100%;
+@media (min-width: 320px) {
+  .taskboard-container {
+    background-color: $shadow;
+    font-family: $font;
     min-height: 100vh;
-    padding: 3vh 5vw 0vh 5vw;
-    font-family: 'Montserrat', ;
 
+    .title {
+      color: $light;
+      font-size: 3em;
+    }
+  }
 }
-
-#wrapper #title{
-    color: black;
-    text-align: center;
-    margin-bottom: 40px;
-    margin-top: 25px;
-    font-weight: bolder;
-    font-size: 50px
-}
-
-#wrapper #cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-#wrapper #button-container {
-    display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-
-#wrapper #add-note {
-    border: 2px solid black;
-    
-    text-align: center;
-    border-radius: 20px;
-    display:inline-block;
-    cursor: pointer;
-    padding: 10px;
-    margin: 40px;
-    font-size: 20px
-}
-
-#wrapper #add-note:hover {
-    border: 2px solid $color2;
-    background-color: $color2;
-    font-weight: bold;
-
-
-}
-

@@ -1,73 +1,64 @@
-import React, { useState } from "react";
+import React from "react";
 import ItemForm from "./ItemForm";
 import Item from "./Item";
 import "./ItemList.css";
+const shortid = require('shortid');
 
-const ItemList = props => {
-  const [incomplete, setIncomplete] = useState([]);
-  const [complete, setComplete] = useState([]);
-  const [uniqueItemId, setUniqueItemId] = useState(0);
+const ItemList = (props) => {
+  const { complete, incomplete, noteIndex, handleAppendListItems } = props;
 
   //Adds ItemForm.js to incomplete in list
-
-  const addToList = text => {
-    let incompleteList = [...incomplete];
-    incompleteList.unshift({ text: text, id: uniqueItemId + 1 });
-    setIncomplete(incompleteList);
-    setUniqueItemId(uniqueItemId + 1);
+  const addToList = (text) => {
+    incomplete.unshift(text);
+    handleAppendListItems(noteIndex, complete, incomplete);
   };
 
   //Changes incomp items to comp
-
-  const handleCompleted = id => {
-    let completeList = [...complete];
-    let incompleteList = [...incomplete];
-    const match = element => element.id === Number(id);
-    completeList.unshift(incompleteList[incompleteList.findIndex(match)]);
-    incompleteList.splice(incompleteList.findIndex(match), 1);
-    setComplete(completeList);
-    setIncomplete(incompleteList);
+  const handleCompleted = (index) => {
+    let completeCopy = [...complete];
+    let incompleteCopy = [...incomplete];
+    completeCopy.unshift(incompleteCopy[index]);
+    incompleteCopy.splice(index, 1);
+    handleAppendListItems(noteIndex, completeCopy, incompleteCopy);
   };
 
   //Changes comp items to incomp
 
-  const handleCompletedReverse = id => {
-    let completeList = [...complete];
-    let incompleteList = [...incomplete];
-    const match = element => element.id === Number(id);
-    incompleteList.unshift(completeList[completeList.findIndex(match)]);
-    completeList.splice(completeList.findIndex(match), 1);
-    setComplete(completeList);
-    setIncomplete(incompleteList);
+  const handleCompletedReverse = (index) => {
+    let completeCopy = [...complete];
+    let incompleteCopy = [...incomplete];
+    incompleteCopy.unshift(completeCopy[index]);
+    completeCopy.splice(index, 1);
+    handleAppendListItems(noteIndex, completeCopy, incompleteCopy);
   };
 
   //Creates a incomp list
-  let incompleteList = [];
-  for (let i = 0; i < incomplete.length; i++) {
-    incompleteList.push(
-      <Item
-        data={incomplete[i].text}
-        handleCompleted={handleCompleted}
-        id={incomplete[i].id}
-        checked={false}
-        key={incomplete[i].id}
-      />
-    );
-  }
 
-  //Creates a comp list
-  let completeList = [];
-  for (let j = 0; j < complete.length; j++) {
-    completeList.push(
+  let incompleteList = incomplete.map((item, index) => {
+    let randId = shortid.generate();
+    return (
       <Item
-        data={complete[j].text}
-        handleCompleted={handleCompletedReverse}
-        id={complete[j].id}
+        data={item}
+        handleCompleted={handleCompleted}
         checked={false}
-        key={complete[j].id}
+        itemIndex={index}
+        key={randId}
       />
     );
-  }
+  });
+
+  let completeList = complete.map((item, index) => {
+    let randId = shortid.generate();
+    return (
+      <Item
+        data={item}
+        handleCompleted={handleCompletedReverse}
+        checked={false}
+        itemIndex={index}
+        key={randId}
+      />
+    );
+  });
 
   return (
     <div>

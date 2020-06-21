@@ -1,24 +1,14 @@
-$color1: rgba(255, 231, 76, 1);
-$color2: rgba(255, 89, 100, 1);
-$color3: rgba(255, 255, 255, 1);
-$color4: rgba(56, 97, 140, 1);
-$color5: rgba(53, 167, 255, 1);
-$color4-tint: rgb(42, 73, 107);
-$color5-tint: rgb(110, 192, 255);
+@import "./standards";
 
-#card-wrapper{
-    margin: 8px 0px 12px 0px ;
-    background-color: $color3;
-    border-radius: 5px;
-    box-shadow: 5px 5px 20px $color5-tint, -5px -5px 20px $color4-tint;
-    display: inline-block;
-
+#flex-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-
-
-#flex-container{
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 320px) {
+  .note {
+    width: 200px;
+    height: auto;
+    background-color: $light;
+  }
 }
-

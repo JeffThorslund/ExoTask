@@ -5,7 +5,7 @@ import "./Title.css";
 class ItemForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "", titled: false };
+    this.state = {titled: false };
   }
 
   handleChange = (e) => {

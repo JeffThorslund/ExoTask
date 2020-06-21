@@ -1,17 +1,10 @@
-import React from 'react';
-import TaskBoard from './components/TaskBoard'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import TaskBoard from "./components/TaskBoard";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <TaskBoard />
-      </header>
-    </div>
-  );
+  return <TaskBoard />;
 }
 
 export default App;
