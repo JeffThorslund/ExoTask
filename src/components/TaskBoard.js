@@ -66,7 +66,7 @@ const TaskBoard = () => {
       <Note
         deleteNote={deleteNote}
         handleAppendListItems={handleAppendListItems}
-        handleChangeTitle = {handleChangeTitle}
+        handleChangeTitle={handleChangeTitle}
         title={note.title}
         complete={note.complete}
         incomplete={note.incomplete}
@@ -79,16 +79,21 @@ const TaskBoard = () => {
   return (
     <Container fluid className="taskboard-container">
       <Row className="justify-content-center">
-        <Col xs="auto" className="title m-3">
+        <Col xs="auto" className="title">
           Tasket
         </Col>
       </Row>
-      <Row className="justify-content-center">
-        <Col sm={9}>
-          <Masonry options={{ transitionDuration: 200 }}>{noteArr}</Masonry>
+      <Row className="d-flex justify-content-center">
+        <Col className="mx-3">
+          <Masonry
+            className={"masonry-notes"}
+            options={{ transitionDuration: 200 }}
+          >
+            {noteArr}
+          </Masonry>
         </Col>
       </Row>
-      <Row className="justify-content-center">
+      <Row className="d-flex justify-content-center">
         <Col xs="auto">
           <div className="add-note" onClick={addNote}>
             Add new

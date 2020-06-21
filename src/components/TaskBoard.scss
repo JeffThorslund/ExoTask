@@ -10,5 +10,19 @@
       color: $light;
       font-size: 3em;
     }
+
+    .masonry-notes {
+      width: 100%;
+    }
+
+    .add-note,
+    .demo {
+      @include button;
+    }
+
+    .add-note:hover,
+    .demo:hover {
+      @include button-hover;
+    }
   }
 }
