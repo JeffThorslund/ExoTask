@@ -5,7 +5,7 @@ import "./Title.css";
 class ItemForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {titled: false };
+    this.state = { titled: true };
   }
 
   handleChange = (e) => {
@@ -33,7 +33,7 @@ class ItemForm extends React.Component {
       <div>
         {this.state.titled ? (
           <div onClick={(e) => this.setTitleFalse(e)} className="untitled">
-            {this.state.value}
+            {this.props.title}
           </div>
         ) : (
           <Form
@@ -45,8 +45,13 @@ class ItemForm extends React.Component {
               <Form.Control
                 type="title"
                 placeholder="Enter a Title"
-                value={this.state.value}
-                onChange={this.handleChange}
+                value={this.props.title}
+                onChange={(e) =>
+                  this.props.handleChangeTitle(
+                    this.props.noteIndex,
+                    e.target.value
+                  )
+                }
                 onBlur={(e) => this.setTitleTrue(e)}
                 className="titled"
               />

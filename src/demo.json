@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1",
+    "title": "Homework",
+    "complete": ["15 minuite break at 8pm", "Eat a study snack."],
+    "incomplete": [
+      "English Essay:  The History of Powdered Donuts",
+      "Get detention slip signed by parents",
+      "Study for science test tomorrow"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Web Development",
+    "complete": [
+      "Learn HTML, CSS and JS",
+      "Create applications that use a Node.js server",
+      "Incorperate lifecycle methods into latest project"
+    ],
+    "incomplete": ["Get a job as a front-end web developer"]
+  },
+  {
+    "id": "3",
+    "title": "Birding",
+    "complete": ["Learn to do an owl call"],
+    "incomplete": [
+      "See a Great Blue Heron at Mud Lake",
+      "Edit pictures taken yesterday",
+      "Ask Jimbo where he saw that Great Black Backed Gull",
+      "Renew subscription to the 'American Birding Association'"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Kayaking",
+    "complete": [
+      "Learn to roll",
+      "Paddle the 'Middle Channel' of the Ottawa River"
+    ],
+    "incomplete": ["Do a 'Loop'"]
+  },
+  {
+    "id": "5",
+    "title": "Excersice",
+    "complete": ["a Jeff complete task", "another complete task"],
+    "incomplete": ["an incomplete task", "another incomplete task"]
+  }
+]

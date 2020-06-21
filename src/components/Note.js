@@ -10,6 +10,7 @@ import "./Note.scss";
 const Note = (props) => {
   const {
     handleAppendListItems,
+    handleChangeTitle,
     noteId,
     title,
     complete,
@@ -21,14 +22,14 @@ const Note = (props) => {
   return (
     <div className="note">
       <div id="flex-container">
-        <Title title={title} />
+        <Title title={title} noteIndex={noteIndex} handleChangeTitle={handleChangeTitle} />
         <div
           onClick={(e) => {
             deleteNote(e.currentTarget.id);
           }}
           id={noteIndex}
         >
-          <MdClose id={noteIndex}/>
+          <MdClose id={noteIndex} />
         </div>
       </div>
       <ItemList

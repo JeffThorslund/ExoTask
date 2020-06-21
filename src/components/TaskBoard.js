@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Note from "./Note";
+import demo from "../demo.json";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -32,6 +33,13 @@ const TaskBoard = () => {
     setNotes(notesCopy);
   };
 
+  //Change Title
+  const handleChangeTitle = (index, title) => {
+    let notesCopy = [...notes];
+    notesCopy[index].title = title;
+    setNotes(notesCopy);
+  };
+
   //Sets list items
   const handleAppendListItems = (index, complete, incomplete) => {
     let notesCopy = [...notes];
@@ -40,11 +48,17 @@ const TaskBoard = () => {
     setNotes(notesCopy);
   };
 
-  //Delete a note FIX THIS
+  //Delete a note
   const deleteNote = (index) => {
     let notesCopy = [...notes];
     notesCopy.splice(index, 1);
     setNotes(notesCopy);
+  };
+
+  //Demo
+  const runDemo = () => {
+    console.log(demo);
+    setNotes(demo);
   };
 
   let noteArr = notes.map((note, index) => {
@@ -52,6 +66,7 @@ const TaskBoard = () => {
       <Note
         deleteNote={deleteNote}
         handleAppendListItems={handleAppendListItems}
+        handleChangeTitle = {handleChangeTitle}
         title={note.title}
         complete={note.complete}
         incomplete={note.incomplete}
@@ -70,13 +85,18 @@ const TaskBoard = () => {
       </Row>
       <Row className="justify-content-center">
         <Col sm={9}>
-          <Masonry options={{ transitionDuration: 0 }}>{noteArr}</Masonry>
+          <Masonry options={{ transitionDuration: 200 }}>{noteArr}</Masonry>
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col xs="auto">
-          <div id="add-note" onClick={addNote}>
+          <div className="add-note" onClick={addNote}>
             Add new
+          </div>
+        </Col>
+        <Col xs="auto">
+          <div className="demo" onClick={runDemo}>
+            Demo
           </div>
         </Col>
       </Row>
