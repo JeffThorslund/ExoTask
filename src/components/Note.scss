@@ -5,6 +5,12 @@
   justify-content: space-between;
 }
 
+.close-button {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
 .note {
   @include shadow;
   height: auto;

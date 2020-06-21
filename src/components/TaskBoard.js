@@ -83,6 +83,11 @@ const TaskBoard = () => {
           Tasket
         </Col>
       </Row>
+      <Row className="justify-content-center">
+        <Col xs="auto" className="subtitle">
+          Subtitle
+        </Col>
+      </Row>
       <Row className="d-flex justify-content-center">
         <Col className="mx-3">
           <Masonry

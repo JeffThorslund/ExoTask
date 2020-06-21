@@ -3,8 +3,6 @@ import React from "react";
 import ItemList from "./Tasking Components/ItemList";
 import Title from "./Tasking Components/Title";
 
-import { MdClose } from "react-icons/md";
-
 import "./Note.scss";
 
 const Note = (props) => {
@@ -22,15 +20,23 @@ const Note = (props) => {
   return (
     <div className="note">
       <div id="flex-container">
-        <Title title={title} noteIndex={noteIndex} handleChangeTitle={handleChangeTitle} />
-        <div
+        <Title
+          title={title}
+          noteIndex={noteIndex}
+          handleChangeTitle={handleChangeTitle}
+        />
+
+        <button
           onClick={(e) => {
             deleteNote(e.currentTarget.id);
           }}
           id={noteIndex}
+          type="button"
+          className="close close-button"
+          aria-label="Close"
         >
-          <MdClose id={noteIndex} />
-        </div>
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <ItemList
         noteId={noteId}
