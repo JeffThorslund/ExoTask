@@ -15,9 +15,9 @@ const TaskBoard = () => {
   const [notes, setNotes] = useState([
     {
       id: "aUniqueId",
-      title: "Example",
-      complete: ["a complete task", "another complete task"],
-      incomplete: ["an incomplete task", "another incomplete task"],
+      title: "Click Title to Edit",
+      complete: ["click a task to uncomplete it", "try this one!"],
+      incomplete: ["click a task to complete it", "give it a go!"],
     },
   ]);
 
@@ -26,7 +26,7 @@ const TaskBoard = () => {
     let notesCopy = [...notes];
     notesCopy.push({
       id: shortid.generate(),
-      title: "Example",
+      title: "Click Title to Edit",
       complete: ["a complete task", "another complete task"],
       incomplete: ["an incomplete task", "another incomplete task"],
     });
@@ -85,14 +85,14 @@ const TaskBoard = () => {
       </Row>
       <Row className="justify-content-center">
         <Col xs="auto" className="subtitle">
-          Subtitle
+          Get your life together, bud.
         </Col>
       </Row>
       <Row className="d-flex justify-content-center">
         <Col className="mx-3">
           <Masonry
             className={"masonry-notes"}
-            options={{ transitionDuration: 200 }}
+            options={{ transitionDuration: 500 }}
           >
             {noteArr}
           </Masonry>
@@ -100,14 +100,19 @@ const TaskBoard = () => {
       </Row>
       <Row className="d-flex justify-content-center">
         <Col xs="auto">
-          <div className="add-note" onClick={addNote}>
-            Add new
+          <div className="add-note button" onClick={addNote}>
+            Add New Note
           </div>
         </Col>
         <Col xs="auto">
-          <div className="demo" onClick={runDemo}>
+          <div className="demo button" onClick={runDemo}>
             Demo
           </div>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs="auto">
+          <div className="summary button">Send Me an Email Summary</div>
         </Col>
       </Row>
     </Container>

@@ -1,32 +1,78 @@
+.taskboard-container {
+  background-color: #303960;
+  font-family: "Montserrat";
+  min-height: 100vh;
+}
+
+.taskboard-container .title {
+  color: #e5e5e5;
+}
+
+.taskboard-container .subtitle {
+  color: #e5e5e5;
+}
+
+.taskboard-container .masonry-notes {
+  width: 100%;
+}
+
+.taskboard-container .button {
+  margin-top: 20px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #e5e5e5;
+  color: black;
+  font-size: 1.1rem;
+}
+
+.taskboard-container .add-note,
+.taskboard-container .demo {
+  background-color: #ea9a96;
+}
+
+.taskboard-container .summary {
+  background-color: #f8b24f;
+  margin-bottom: 20px;
+}
+
+.taskboard-container .add-note:hover,
+.taskboard-container .demo:hover,
+.taskboard-container .summary:hover {
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
 @media (min-width: 320px) {
-  .taskboard-container {
-    background-color: #818db0;
-    font-family: "Montserrat";
-    min-height: 100vh;
-  }
   .taskboard-container .title {
-    color: #ffffff;
-    font-size: 5em;
+    font-size: 3em;
+    padding-top: 10px;
   }
-  .taskboard-container .masonry-notes {
-    width: 100%;
+  .taskboard-container .subtitle {
+    font-size: 1em;
+    padding-bottom: 25px;
   }
-  .taskboard-container .add-note,
-  .taskboard-container .demo {
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    padding: 8px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #ffffff;
-    color: #010001;
+}
+
+@media (min-width: 576px) {
+  .taskboard-container .title {
+    font-size: 3.5em;
   }
-  .taskboard-container .add-note:hover,
-  .taskboard-container .demo:hover {
-    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  .taskboard-container .subtitle {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .taskboard-container .title {
+    font-size: 4em;
+  }
+  .taskboard-container .subtitle {
+    font-size: 2em;
   }
 }
 /*# sourceMappingURL=TaskBoard.css.map */

@@ -1,20 +1,20 @@
-#complete{
-    text-decoration: line-through;
-    
+@import "../standards";
+
+#complete {
+  text-decoration: line-through;
 }
 
-#line{
-    border-top: 2px grey solid;
-    margin: 7px 0px 5px 0px;
+#line {
+  border-top: 2px $shadow solid;
+  margin: 7px 0px 5px 0px;
 }
 
-.full{
-    display: none;
-
+.full {
+  display: none;
 }
 
-.empty{
-    display: block;
-    font-size: 13px;
-    color: grey
+.empty {
+  display: block;
+  font-size: 13px;
+  color: $shadow;
 }

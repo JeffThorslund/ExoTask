@@ -1,9 +1,13 @@
-#checkbox {
+.checkbox {
   display: inline-block;
   margin-right: 10px;
 }
 
 .item-wrapper {
   cursor: pointer;
+}
+
+.item-wrapper:hover {
+  font-weight: 600;
 }
 /*# sourceMappingURL=Item.css.map */

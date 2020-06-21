@@ -1,28 +1,76 @@
 @import "./standards";
 
+.taskboard-container {
+  background-color: $shadow;
+  font-family: $font;
+  min-height: 100vh;
+
+  .title {
+    color: $light;
+  }
+
+  .subtitle {
+    color: $light;
+  }
+
+  .masonry-notes {
+    width: 100%;
+  }
+
+  .button {
+    margin-top: 20px;
+    @include button;
+    font-size: 1.1rem;
+  }
+
+  .add-note,
+  .demo {
+    background-color: $primary;
+  }
+
+  .summary {
+    background-color: $secondary;
+    margin-bottom: 20px;
+  }
+
+  .add-note:hover,
+  .demo:hover,
+  .summary:hover {
+    @include button-hover;
+  }
+}
+
 @media (min-width: 320px) {
   .taskboard-container {
-    background-color: $shadow;
-    font-family: $font;
-    min-height: 100vh;
-
     .title {
-      color: $light;
-      font-size: 5em;
+      font-size: 3em;
+      padding-top: 10px;
     }
-
-    .masonry-notes {
-      width: 100%;
+    .subtitle {
+      font-size: 1em;
+      padding-bottom: 25px;
     }
+  }
+}
 
-    .add-note,
-    .demo {
-      @include button;
+@media (min-width: 576px) {
+  .taskboard-container {
+    .title {
+      font-size: 3.5em;
     }
+    .subtitle {
+      font-size: 1.5em;
+    }
+  }
+}
 
-    .add-note:hover,
-    .demo:hover {
-      @include button-hover;
+@media (min-width: 768px) {
+  .taskboard-container {
+    .title {
+      font-size: 4em;
+    }
+    .subtitle {
+      font-size: 2em;
     }
   }
 }

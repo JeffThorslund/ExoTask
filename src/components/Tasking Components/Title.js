@@ -23,14 +23,16 @@ class ItemForm extends React.Component {
 
   setTitleTrue = (e) => {
     e.preventDefault();
-    this.setState({
-      titled: true,
-    });
+    if (this.props.title.length > 0) {
+      this.setState({
+        titled: true,
+      });
+    }
   };
 
   render() {
     return (
-      <div>
+      <>
         {this.state.titled ? (
           <div onClick={(e) => this.setTitleFalse(e)} className="untitled">
             {this.props.title}
@@ -39,12 +41,12 @@ class ItemForm extends React.Component {
           <Form
             autocomplete="off"
             onSubmit={(e) => this.setTitleTrue(e)}
-            className="title"
+            className="form-title"
           >
             <Form.Group id="form-group">
               <Form.Control
                 type="title"
-                placeholder="Enter a Title"
+                placeholder="Press Enter to Submit"
                 value={this.props.title}
                 onChange={(e) =>
                   this.props.handleChangeTitle(
@@ -58,7 +60,7 @@ class ItemForm extends React.Component {
             </Form.Group>
           </Form>
         )}
-      </div>
+      </>
     );
   }
 }

@@ -1,12 +1,10 @@
 #input-form {
-  background-color: white;
   border-radius: 0px;
-  border: 2px Solid grey;
+  border: 2px Solid #303960;
   padding: 4px;
-}
-
-#input-form:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  background-color: #e5e5e5;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
 }
 /*# sourceMappingURL=ItemForm.css.map */

@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAMA,AAAA,WAAW,CAAA;EACP,gBAAgB,EALX,KAAsB;EAM3B,aAAa,EAAE,GAAG;EAElB,MAAM,EAAE,cAAc;EACtB,OAAO,EAAE,GAAG;CACf;;AAED,AAAA,WAAW,AAAA,MAAM,CAAC;EACd,UAAU,EAAE,IAAI;CACjB",
+    "mappings": "AAEA,AAAA,WAAW,CAAC;EC8BV,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,GAAG,CAAC,KAAK,CA7BV,OAAO;EA8Bd,OAAO,EAAE,GAAG;EACZ,gBAAgB,EAlCV,OAAO;EDGb,UAAU,EAAE,GAAG;EACf,WAAW,EAAE,GAAG;EAChB,YAAY,EAAE,GAAG;CAClB",
     "sources": [
-        "ItemForm.scss"
+        "ItemForm.scss",
+        "../_standards.scss"
     ],
     "names": [],
     "file": "ItemForm.css"

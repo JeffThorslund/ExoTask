@@ -2,9 +2,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .close-button {
@@ -13,21 +13,28 @@
   right: 2%;
 }
 
+.close-button:focus {
+  outline: 0px transparent !important;
+}
+
 .note {
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   height: auto;
-  background-color: #ffffff;
-  -webkit-transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: #e5e5e5;
+}
+
+.note:hover {
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 @media (min-width: 320px) {
   .note {
     width: 100%;
-    padding: 3%;
+    padding: 12px;
     margin-bottom: 4%;
   }
 }
@@ -36,20 +43,20 @@
   .note {
     width: 48%;
     margin: 1%;
-    padding: 2%;
-  }
-}
-
-@media (min-width: 768px) {
-  .note {
-    width: 31.2%;
-    padding: 1.5%;
+    padding: 15px;
   }
 }
 
 @media (min-width: 992px) {
   .note {
-    width: 23%;
+    width: 31%;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .note {
+    width: 22%;
   }
 }
 /*# sourceMappingURL=Note.css.map */
