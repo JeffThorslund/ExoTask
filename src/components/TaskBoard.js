@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Note from "./Note";
-import MailButton from "./MailButton"
+//import MailButton from "./MailButton"
 import demo from "../demo.json";
 
 
