@@ -33,7 +33,7 @@
 
 @media (min-width: 320px) {
   .note {
-    width: 100%;
+    width: 99%;
     padding: 12px;
     margin-bottom: 4%;
   }
@@ -41,7 +41,7 @@
 
 @media (min-width: 576px) {
   .note {
-    width: 48%;
+    width: 47%;
     margin: 1%;
     padding: 15px;
   }
@@ -49,14 +49,14 @@
 
 @media (min-width: 992px) {
   .note {
-    width: 31%;
+    width: 30%;
     padding: 20px;
   }
 }
 
 @media (min-width: 1200px) {
   .note {
-    width: 22%;
+    width: 23%;
   }
 }
 /*# sourceMappingURL=Note.css.map */

@@ -82,7 +82,7 @@ const TaskBoard = () => {
     <Container fluid className="taskboard-container">
       <Row className="justify-content-center">
         <Col xs="auto" className="title">
-          Exotask
+          ExoTask
         </Col>
       </Row>
       <Row className="justify-content-center">
@@ -110,11 +110,6 @@ const TaskBoard = () => {
           <div className="demo button" onClick={runDemo}>
             Demo
           </div>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
-        <Col xs="auto">
-          <MailButton />
         </Col>
       </Row>
     </Container>

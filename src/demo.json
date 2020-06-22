@@ -1,28 +1,29 @@
 [
   {
-    "id": "1",
-    "title": "Homework",
-    "complete": ["15 minuite break at 8pm", "Eat a study snack."],
-    "incomplete": [
-      "English Essay:  The History of Powdered Donuts",
-      "Get detention slip signed by parents",
-      "Study for science test tomorrow"
-    ]
-  },
-  {
     "id": "2",
-    "title": "Web Development",
+    "title": "Front-End Development",
     "complete": [
-      "Learn HTML, CSS and JS",
-      "Create applications that use a Node.js server",
+      "Learn HTML, CSS and JS.",
+      "Use Git to track changes, organize feature additions and handle bugfixes",
+      "Create an application that hosts data on a Node.js server",
+      "Use React to expand the capabilities of my applications",
       "Incorperate lifecycle methods into latest project"
     ],
-    "incomplete": ["Get a job as a front-end web developer"]
+    "incomplete": [
+      "Finish styling 'map' components of river project",
+      "Contribute to an open source project",
+      "Build a REST API for Bent Shaft Maps"
+    ]
   },
+
   {
     "id": "3",
     "title": "Birding",
-    "complete": ["Learn to do an owl call"],
+    "complete": [
+      "Learn to do an owl call",
+      "Participate in a 'big day'",
+      "Learn all Ontario birds by sight and sound"
+    ],
     "incomplete": [
       "See a Great Blue Heron at Mud Lake",
       "Edit pictures taken yesterday",
@@ -35,14 +36,49 @@
     "title": "Kayaking",
     "complete": [
       "Learn to roll",
-      "Paddle the 'Middle Channel' of the Ottawa River"
+      "Paddle the 'Middle Channel' of the Ottawa River",
+      "Paddle the 280 mile whitewater stretch of the Grand Canyon",
+      "Surf ocean waves in kayak"
     ],
-    "incomplete": ["Do a 'Loop'"]
+    "incomplete": ["Do a 'Loop'", "Teach a beginner how to roll"]
   },
   {
     "id": "5",
-    "title": "Excersice",
-    "complete": ["a Jeff complete task", "another complete task"],
-    "incomplete": ["an incomplete task", "another incomplete task"]
+    "title": "Job Search",
+    "complete": ["Finish my resume", "Update README files in my main projects"],
+    "incomplete": ["Find a team that shares my goals"]
+  },
+  {
+    "id": "7",
+    "title": "Photography",
+    "complete": [
+      "Clean lense",
+      "Look into the 7D mkII as a potential camera upgrade"
+    ],
+    "incomplete": [
+      "Finish 2020 bird calendar",
+      "Clean hard drive of archived images"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Side Projects",
+    "incomplete": [
+      "Look into Ford E250 Van to do camper-van conversion",
+      "Make game of Kubb with wooden pieces",
+      "Learn next tier of Indonesian"
+    ],
+    "complete": [
+      "Learn basic Indonesian (questions, food, greetings, basic sentences)"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Events to Remember",
+    "incomplete": [
+      "Bike to the river with Cam",
+      "Have a patio beer with Brohan"
+    ],
+    "complete": ["Play Kubb with Doug, Connor and Katie"]
   }
 ]
