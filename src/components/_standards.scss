@@ -4,7 +4,8 @@ $primary: #ea9a96;
 $secondary: #f8b24f;
 $shadow: #303960;
 
-$font: "Montserrat";
+$font: "Balsamiq Sans", cursive;
+$title: "Balsamiq Sans", cursive;
 
 @mixin shadow {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);

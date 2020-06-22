@@ -6,10 +6,14 @@
   min-height: 100vh;
 
   .title {
+    font-family: $title;
+    font-weight: 400;
     color: $light;
   }
 
   .subtitle {
+    font-family: $title;
+    font-weight: 400;
     color: $light;
   }
 
@@ -17,10 +21,28 @@
     width: 100%;
   }
 
-  .button {
+  .button,
+  .summary-input {
+    font-family: $title;
     margin-top: 20px;
     @include button;
     font-size: 1.1rem;
+    outline-width: 0px;
+  }
+  .summary-input {
+    background-color: $shadow;
+    border: 3px $secondary solid;
+    color: $light !important;
+  }
+
+  .summary-input::placeholder {
+    color: $light;
+  }
+
+  .summary-input-button {
+    background-color: $secondary;
+    margin-left: 10px;
+    border-width: 0px;
   }
 
   .add-note,
@@ -35,7 +57,8 @@
 
   .add-note:hover,
   .demo:hover,
-  .summary:hover {
+  .summary:hover,
+  .summary-input-button:hover {
     @include button-hover;
   }
 }
@@ -44,7 +67,7 @@
   .taskboard-container {
     .title {
       font-size: 3em;
-      padding-top: 10px;
+      padding-top: 20px;
     }
     .subtitle {
       font-size: 1em;

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Note from "./Note";
+import MailButton from "./MailButton"
 import demo from "../demo.json";
+
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -80,12 +82,12 @@ const TaskBoard = () => {
     <Container fluid className="taskboard-container">
       <Row className="justify-content-center">
         <Col xs="auto" className="title">
-          Tasket
+          Exotask
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col xs="auto" className="subtitle">
-          Get your life together, bud.
+          Get your life together.
         </Col>
       </Row>
       <Row className="d-flex justify-content-center">
@@ -112,7 +114,7 @@ const TaskBoard = () => {
       </Row>
       <Row className="justify-content-center">
         <Col xs="auto">
-          <div className="summary button">Send Me an Email Summary</div>
+          <MailButton />
         </Col>
       </Row>
     </Container>

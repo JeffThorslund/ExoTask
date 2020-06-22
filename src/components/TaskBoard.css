@@ -1,14 +1,18 @@
 .taskboard-container {
   background-color: #303960;
-  font-family: "Montserrat";
+  font-family: "Balsamiq Sans", cursive;
   min-height: 100vh;
 }
 
 .taskboard-container .title {
+  font-family: "Balsamiq Sans", cursive;
+  font-weight: 400;
   color: #e5e5e5;
 }
 
 .taskboard-container .subtitle {
+  font-family: "Balsamiq Sans", cursive;
+  font-weight: 400;
   color: #e5e5e5;
 }
 
@@ -16,7 +20,9 @@
   width: 100%;
 }
 
-.taskboard-container .button {
+.taskboard-container .button,
+.taskboard-container .summary-input {
+  font-family: "Balsamiq Sans", cursive;
   margin-top: 20px;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -28,6 +34,35 @@
   background-color: #e5e5e5;
   color: black;
   font-size: 1.1rem;
+  outline-width: 0px;
+}
+
+.taskboard-container .summary-input {
+  background-color: #303960;
+  border: 3px #f8b24f solid;
+  color: #e5e5e5 !important;
+}
+
+.taskboard-container .summary-input::-webkit-input-placeholder {
+  color: #e5e5e5;
+}
+
+.taskboard-container .summary-input:-ms-input-placeholder {
+  color: #e5e5e5;
+}
+
+.taskboard-container .summary-input::-ms-input-placeholder {
+  color: #e5e5e5;
+}
+
+.taskboard-container .summary-input::placeholder {
+  color: #e5e5e5;
+}
+
+.taskboard-container .summary-input-button {
+  background-color: #f8b24f;
+  margin-left: 10px;
+  border-width: 0px;
 }
 
 .taskboard-container .add-note,
@@ -42,7 +77,8 @@
 
 .taskboard-container .add-note:hover,
 .taskboard-container .demo:hover,
-.taskboard-container .summary:hover {
+.taskboard-container .summary:hover,
+.taskboard-container .summary-input-button:hover {
   -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
           box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
@@ -50,7 +86,7 @@
 @media (min-width: 320px) {
   .taskboard-container .title {
     font-size: 3em;
-    padding-top: 10px;
+    padding-top: 20px;
   }
   .taskboard-container .subtitle {
     font-size: 1em;
