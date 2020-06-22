@@ -1,10 +1,10 @@
-# Tasket
+# ExoTask
 
 A simple tool for keeping managing your to-do lists. Keep track of which tasks are either complete or incomplete. Organize your tasks into groups to better visualize what needs to get done. Delete groups of tasks when they are no longer needed.
 
 ## Deployment
 
-Try [Tasket](https://nostalgic-ptolemy-3015c3.netlify.com/).
+Try [ExoTask](https://nostalgic-ptolemy-3015c3.netlify.com/).
 
 ## Built With
 
