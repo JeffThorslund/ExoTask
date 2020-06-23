@@ -4,7 +4,7 @@ A simple tool for keeping managing your to-do lists. Keep track of which tasks a
 
 ## Deployment
 
-Try [ExoTask](https://nostalgic-ptolemy-3015c3.netlify.com/).
+Try [ExoTask](https://nostalgic-ptolemy-3015c3.netlify.app).
 
 ## Built With
 
